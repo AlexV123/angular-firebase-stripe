@@ -10,14 +10,14 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 // Firebase setup instructions
 
 // 1. delete this line, then...
-import { firebaseConfig } from '../../env'; 
+import { environment } from '../../environments/environment';
 
 // 2. Add your own firebase config to environment.ts
 // 3. Then use it to initialize angularfire2 below, like so AngularFireModule.initializeApp(environment.firebaseConfig),
 
 
 import { AuthService } from './auth.service';
-import { AuthGuard } from './auth.guard'; 
+import { AuthGuard } from './auth.guard';
 
 import { TokenInterceptor } from './token.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -25,14 +25,14 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 @NgModule({
   imports: [
     CommonModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
   ],
   declarations: [],
   providers: [
-    AuthService, 
-    AuthGuard,     
+    AuthService,
+    AuthGuard,
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ]
 })

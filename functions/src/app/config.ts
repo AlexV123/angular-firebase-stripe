@@ -17,13 +17,13 @@ import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
 
 //// Service account required for Stripe Connect OAuth
-const serviceAccount = require('../../credentials.json')
+const serviceAccount = require('../../angular-firebase-stripe-52e46-firebase-adminsdk-2p3ju-0dd9df7f19.json');
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://stripe-elements.firebaseio.com"
 });
- 
+
 //// If not using Stripe Connect, initialize without service account
 // admin.initializeApp(functions.config().firebase);
 
@@ -33,7 +33,7 @@ export const auth   = admin.auth();
 
 //// Initalize Stripe NodeJS SDK ////
 
-import * as Stripe from 'stripe'; 
+import * as Stripe from 'stripe';
 
 export const stripeSecret       = functions.config().stripe.secret;
 export const stripePublishable  = functions.config().stripe.publishable;

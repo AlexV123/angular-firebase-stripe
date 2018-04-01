@@ -7,12 +7,12 @@ export const environment = {
 
   production: false,
   firebase: {
-    apiKey: '<project>',
-    authDomain: '<project>.firebaseapp.com',
-    databaseURL: 'https://<project>.firebaseio.com',
-    projectId: '<project>',
-    storageBucket: '<project>.appspot.com',
-    messagingSenderId: '<project>'
+    apiKey: "AIzaSyCrsR1B5AlRgn8cmrYGyvjwQxEZfv6kd58",
+    authDomain: "angular-firebase-stripe-52e46.firebaseapp.com",
+    databaseURL: "https://angular-firebase-stripe-52e46.firebaseio.com",
+    projectId: "angular-firebase-stripe-52e46",
+    storageBucket: "angular-firebase-stripe-52e46.appspot.com",
+    messagingSenderId: "282099974369"
   },
 
   functionsURL: 'https://us-central1-stripe-elements.cloudfunctions.net',
